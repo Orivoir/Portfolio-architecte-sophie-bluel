@@ -1,7 +1,15 @@
 import implementProjects from "./modules/implement/implement-projects.js"
 import implementFilters from "./modules/implement/implement-filters.js"
-import { ATTRIBUTE_CATEGORY_ID } from "./modules/helper.js"
+import implementContextLogin from "./modules/implement/implement-context-login.js"
 import projectsFilter from "./modules/projects-filter.js"
+
+
+/**
+ * check if user is logged and update User Interface if needed
+ * Defined upgrade User Interface @see ./modules/context/toggleLogged.js
+ * Define user state @see ./helper.js
+ */
+implementContextLogin()
 
 /**
  * create skeleton for each project that fetched from API endpoint (GET /api/works) and append in the document

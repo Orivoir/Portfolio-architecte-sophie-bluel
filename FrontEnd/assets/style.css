@@ -189,3 +189,9 @@ footer nav ul {
 .hide {
 	display: none;
 }
+
+
+.title-projects {
+	display: flex;
+	gap: 0 10px;
+}
