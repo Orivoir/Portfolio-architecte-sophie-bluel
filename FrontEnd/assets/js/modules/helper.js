@@ -42,9 +42,41 @@ const ENDPOINT = {
     baseUrl.pathname += endpoint
 
     return baseUrl.toString()
+  },
+
+  get login() {
+
+    const endpoint = "/users/login"
+
+    const baseUrl = new URL(this.baseUrl)
+
+    baseUrl.pathname += endpoint
+
+    return baseUrl.toString()
+  }
+}
+
+const USER = {
+
+  get isConnected() {
+
+    return !!sessionStorage.getItem("token")
+  },
+
+  get token() {
+
+    return sessionStorage.getItem("token")
+  },
+
+  logout() {
+    if(this.isConnected) {
+      sessionStorage.removeItem("token")
+      document.location.href = "/"
+    }
+
   }
 }
 
 const ATTRIBUTE_CATEGORY_ID = "data-category-id"
 
-export {ENDPOINT, ATTRIBUTE_CATEGORY_ID}
+export {ENDPOINT, ATTRIBUTE_CATEGORY_ID, USER}

@@ -35,7 +35,30 @@ const API = {
   },
 
   /**
-   * generic fetch with target and extract JSON from response
+   * request authentication with credentials
+   * @param {email: string; password: string} credentials 
+   * @returns {token: string; id: numner}
+   */
+  async login({email, password}) {
+
+    const target = ENDPOINT.login
+    
+    const response = await fetch(target, {
+      body: JSON.stringify({email, password}),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+    })
+
+    const data = await response.json()
+
+    return data.error || data.message ? false: data
+  },
+
+  /**
+   * generic fetch GET method with target and extract JSON from response
    * @param {string} target 
    * @returns Promise<JSON>
    */
