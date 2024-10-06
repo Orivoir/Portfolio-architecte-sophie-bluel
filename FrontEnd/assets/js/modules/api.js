@@ -1,4 +1,4 @@
-import { ENDPOINT, WORKS_KEYNAME } from "./helper.js"
+import { ENDPOINT, WORKS_KEYNAME, USER, WORKS_CACHE } from "./helper.js"
 
 /**
  * this object execute fetch request and provide server data.
@@ -7,35 +7,24 @@ import { ENDPOINT, WORKS_KEYNAME } from "./helper.js"
 const API = {
 
   /**
-   * fetch list of projects in database (or local storage if exists)
+   * fetch list of projects in database (or session storage if exists)
    * @returns Promise<Array>
    * @see /api-docs/#/default/get_works
    */
   async works() {
 
-    let worksFromStorage = localStorage.getItem(WORKS_KEYNAME)?.trim()
+    const worksFromCache = WORKS_CACHE.works
 
-    if(worksFromStorage) {
-      try {
-
-        worksFromStorage = JSON.parse(worksFromStorage)
-        console.log("get works from local storage !")
-
-        return worksFromStorage
-      } catch(error) {
-        /**
-         * Storage empty or data corrupted/invalid
-         * Should clean storage and execute fetch request
-         */
-        localStorage.removeItem(WORKS_KEYNAME)
-      }
+    if(worksFromCache) {
+      console.log("get works from session storage !")
+      return worksFromCache
     }
 
     const target = ENDPOINT.works
 
     const works = await this.fetch(target)
 
-    localStorage.setItem(WORKS_KEYNAME, JSON.stringify(works))
+    sessionStorage.setItem(WORKS_KEYNAME, JSON.stringify(works))
 
     return works
   },
@@ -75,6 +64,37 @@ const API = {
     const data = await response.json()
 
     return data.error || data.message ? false: data
+  },
+
+  /**
+   * 
+   * @param {number} id 
+   * @returns {message: string; status: number}
+   */
+  async removeWork(id) {
+
+    if(!USER.isConnected) {
+      return {message: "connected user is required for this action", status: 401}
+    }
+
+    const target = ENDPOINT.removeWork(id)
+    const token = USER.token
+
+    const response = await fetch(target, {
+      method: "DELETE",
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+
+    if(response.status === 200 || response.status === 204) {
+      return  {message: "OK", status: 200}
+    }
+
+    return {
+      message: "request failed with status",
+      status: response.status
+    }
   },
 
   /**

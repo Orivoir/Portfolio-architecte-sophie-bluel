@@ -57,6 +57,17 @@ const ENDPOINT = {
     baseUrl.pathname += endpoint
 
     return baseUrl.toString()
+  },
+
+  removeWork(id) {
+
+    const endpoint = `/works/${id}`
+
+    const baseUrl = new URL(this.baseUrl)
+
+    baseUrl.pathname += endpoint
+
+    return baseUrl.toString()
   }
 }
 
@@ -116,14 +127,82 @@ const ACTIONS_LOGGED_USER = {
   }
 }
 
+/**
+ * this object provides works list from sessionStorage
+ * after first network request works are save and after remove or add work sessionStorage is upgrade
+ * this entity exists for reduce network cost each times you see a log with: "get works from session storage" result provide from sessionStorage instead of server
+ */
+const WORKS_CACHE = {
+
+  get works() {
+
+    let worksFromStorage = sessionStorage.getItem(WORKS_KEYNAME)?.trim()
+
+    if(worksFromStorage) {
+      try {
+
+        worksFromStorage = JSON.parse(worksFromStorage)
+        return worksFromStorage
+      } catch(error) {
+        /**
+         * Storage empty or data corrupted/invalid
+         * Should clean storage and execute fetch request
+         */
+        sessionStorage.removeItem(WORKS_KEYNAME)
+      }
+    }
+
+    return null
+  },
+
+  remove(id) {
+
+    const works = this.works
+
+    if(!works) {
+      return false
+    }
+
+    const nextWorks = works.filter(work => (
+      work.id !== id
+    ))
+
+    sessionStorage.setItem(WORKS_KEYNAME, JSON.stringify(nextWorks))
+
+    return true
+  },
+
+  append(work) {
+
+    const works = this.works
+
+    if(!works) {
+      return false
+    }
+
+    works.push(work)
+
+    sessionStorage.setItem(WORKS_KEYNAME, JSON.stringify(works))
+
+    return true
+  },
+
+  clear() {
+    sessionStorage.removeItem(WORKS_KEYNAME)
+  }
+}
+
 const ATTRIBUTE_CATEGORY_ID = "data-category-id"
+const ATTRIBUTE_PROJECT_ID = "data-project-id"
 
 const WORKS_KEYNAME = "works"
 
 export {
   ENDPOINT,
   ATTRIBUTE_CATEGORY_ID,
+  ATTRIBUTE_PROJECT_ID,
   WORKS_KEYNAME,
   USER,
-  ACTIONS_LOGGED_USER
+  ACTIONS_LOGGED_USER,
+  WORKS_CACHE
 }

@@ -1,3 +1,6 @@
+import { ATTRIBUTE_PROJECT_ID } from "../helper.js"
+import onRemoveProject from "../actions/remove-project.js"
+
 /**
  * Model skeleton thumbnail project:
  * 
@@ -23,6 +26,7 @@
 export default function createProjectSkeleton({
   imageUrl,
   title,
+  id
 }) {
   
   const li = document.createElement("li")
@@ -40,8 +44,9 @@ export default function createProjectSkeleton({
   
   containerRemove.classList.add("container-remove")
   btnRemove.textContent = "rm"
+  btnRemove.setAttribute(ATTRIBUTE_PROJECT_ID, id)
 
-  // @TODO attach remove action to button remove
+  btnRemove.addEventListener("click", onRemoveProject)
 
   containerRemove.appendChild(btnRemove)
   figure.appendChild(image)

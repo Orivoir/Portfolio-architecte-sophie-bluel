@@ -8,6 +8,9 @@ export default async function implementProjects() {
 
   const containerProject = document.querySelector("#portfolio .gallery")
 
+  // clear content if called for upgrade UI
+  containerProject.innerHTML = ""
+
   works.forEach(work => {
     
     const workSkeleton = createProjectSkeleton(work)

@@ -223,8 +223,10 @@ button {
 .modal .content-modal {
 
 	background-color: #fff;
-	width: 50%;
+	width: 25%;
 	min-width: 320px;
+	padding: 45px 90px;
+	border-radius: 20px;
 }
 
 .modal .content-modal .actions {

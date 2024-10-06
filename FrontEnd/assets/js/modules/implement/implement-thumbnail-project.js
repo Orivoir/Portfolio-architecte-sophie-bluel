@@ -8,6 +8,9 @@ export default async function implementThumbnailProjects() {
 
   const containerThumbnailProject = document.querySelector(".modal .removable-gallery .container-removale-gallery")
 
+  // clear content if called for upgrade UI
+  containerThumbnailProject.innerHTML = ""
+
   works.forEach(work => {
     
     const workSkeleton = createThumbnailProjectSkeleton(work)
