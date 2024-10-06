@@ -43,16 +43,17 @@ import projectsFilter from "./modules/projects-filter.js"
   if(USER.isConnected) {
 
     /**
-     * Listen click at filter buttons and apply sort on projects.
-     * @see ./projects-filter.js
-     */
-    projectsFilter()
-
-    /**
      * Implements projects list from modal
      */
     await implementThumbnailProjects()
     
     console.log("Implements thumbnails project in modal fully fulled !")
+  } else {
+
+    /**
+     * Listen click at filter buttons and apply sort on projects.
+     * @see ./projects-filter.js
+     */
+    projectsFilter()
   }
 })()
