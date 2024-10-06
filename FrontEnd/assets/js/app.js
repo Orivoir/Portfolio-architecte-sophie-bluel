@@ -1,6 +1,9 @@
 import implementProjects from "./modules/implement/implement-projects.js"
 import implementFilters from "./modules/implement/implement-filters.js"
 import implementContextLogin from "./modules/implement/implement-context-login.js"
+import implementThumbnailProjects from "./modules/implement/implement-thumbnail-project.js"
+
+import { USER } from "./modules/helper.js"
 import projectsFilter from "./modules/projects-filter.js"
 
 
@@ -29,17 +32,28 @@ implementProjects()
    */
   implementFilters()
   .then(() => {
+
     /**
      * filters have been fully fulled created
      * here can listen click at buttons filters
      */
     console.log("Implements filters fully fulled !")
     
-    /**
-     * Listen click at filter buttons and apply sort on projects.
-     * @see ./projects-filter.js
-     */
-    projectsFilter()
+    if(USER.isConnected) {
+      /**
+       * Listen click at filter buttons and apply sort on projects.
+       * @see ./projects-filter.js
+       */
+      projectsFilter()
+
+      /**
+       * Implements project from modal
+       */
+      implementThumbnailProjects()
+      .then(() => {
+        console.log("Implements thumbnails project in modal fully fulled !")
+      })
+    }
   })
 
 })

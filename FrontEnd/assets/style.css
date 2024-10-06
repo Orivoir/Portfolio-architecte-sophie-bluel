@@ -186,12 +186,66 @@ footer nav ul {
 	margin: 2em
 }
 
+button {
+	cursor: pointer;
+}
+
+
 .hide {
-	display: none;
+	display: none!important;
+}
+
+.hide-alt {
+
+	opacity: 0!important;
 }
 
 
 .title-projects {
 	display: flex;
 	gap: 0 10px;
+}
+
+
+.modal {
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal .content-modal {
+
+	background-color: #fff;
+	width: 50%;
+	min-width: 320px;
+}
+
+.modal .content-modal .actions {
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.container-removale-gallery {
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 10px;
+}
+
+.container-removale-gallery li {
+	position: relative;
+}
+
+.container-remove {
+	position: absolute;
+	right: 10px;
+	top: 10px;
 }

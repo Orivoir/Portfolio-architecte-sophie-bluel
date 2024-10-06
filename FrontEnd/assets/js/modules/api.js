@@ -1,4 +1,4 @@
-import { ENDPOINT } from "./helper.js"
+import { ENDPOINT, WORKS_KEYNAME } from "./helper.js"
 
 /**
  * this object execute fetch request and provide server data.
@@ -7,15 +7,35 @@ import { ENDPOINT } from "./helper.js"
 const API = {
 
   /**
-   * fetch list of projects in database
+   * fetch list of projects in database (or local storage if exists)
    * @returns Promise<Array>
    * @see /api-docs/#/default/get_works
    */
   async works() {
 
+    let worksFromStorage = localStorage.getItem(WORKS_KEYNAME)?.trim()
+
+    if(worksFromStorage) {
+      try {
+
+        worksFromStorage = JSON.parse(worksFromStorage)
+        console.log("get works from local storage !")
+
+        return worksFromStorage
+      } catch(error) {
+        /**
+         * Storage empty or data corrupted/invalid
+         * Should clean storage and execute fetch request
+         */
+        localStorage.removeItem(WORKS_KEYNAME)
+      }
+    }
+
     const target = ENDPOINT.works
 
     const works = await this.fetch(target)
+
+    localStorage.setItem(WORKS_KEYNAME, JSON.stringify(works))
 
     return works
   },
