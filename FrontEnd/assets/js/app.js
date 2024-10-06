@@ -7,7 +7,7 @@ import { USER, WORKS_CACHE } from "./modules/helper.js"
 import projectsFilter from "./modules/projects-filter.js"
 
 
-async function main() {
+(async function() {
 
   /**
    * check if user is logged and update User Interface if needed
@@ -55,6 +55,4 @@ async function main() {
     
     console.log("Implements thumbnails project in modal fully fulled !")
   }
-}
-
-main()
+})()
