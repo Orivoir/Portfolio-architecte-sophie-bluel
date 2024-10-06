@@ -1,6 +1,7 @@
 import onCloseModal from "./actions/close-modal.js"
 import onUpdate from "./actions/update.js"
 import onLogout from "./actions/logout.js"
+import {API} from "./api.js"
 
 /**
  * this object define (static) base url and endpoint of server API
@@ -189,6 +190,25 @@ const WORKS_CACHE = {
 
   clear() {
     sessionStorage.removeItem(WORKS_KEYNAME)
+  },
+
+  async verify() {
+
+    const works = this.works
+
+    if(!works) return null
+
+    if(works.length == 0) {
+      sessionStorage.removeItem(WORKS_KEYNAME)
+      return null
+    }
+
+    const serverWorks = await API.works()
+
+    if(serverWorks.length > 0) {
+      sessionStorage.setItem(WORKS_KEYNAME, JSON.stringify(serverWorks))
+    }
+
   }
 }
 
