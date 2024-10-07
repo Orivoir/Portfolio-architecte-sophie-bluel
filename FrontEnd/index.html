@@ -111,7 +111,9 @@
 
 				<hr>
 
-				<button>Ajouter une photo</button>
+				<div class="container-add-photo">
+					<button>Ajouter une photo</button>
+				</div>
 			</div>
 
 			<div class="add-photo-content hide">
@@ -121,7 +123,8 @@
 				<form method="POST" target="#">
 						<div class="drop-zone-photo">
 							<label for="photo">+ Ajouter photo</label>
-							<input type="file" id="photo" name="photo" accept="image/png, image/jpeg">
+							<input type="file" id="photo" class="hide" name="photo" accept="image/png, image/jpeg">
+							<p>jpg, png: 4mo max</p>
 						</div>
 
 						<div>
@@ -130,6 +133,7 @@
 						</div>
 
 						<div>
+							<label for="category">Catégorie</label>
 							<select name="category" id="category">
 								<!-- Dynamic insert options with Javascript -->
 							</select>

@@ -2,6 +2,7 @@ import implementProjects from "./modules/implement/implement-projects.js"
 import implementFilters from "./modules/implement/implement-filters.js"
 import implementContextLogin from "./modules/implement/implement-context-login.js"
 import implementThumbnailProjects from "./modules/implement/implement-thumbnail-project.js"
+import implementCategoriesOptions from "./modules/implement/implement-categories-options.js"
 
 import { USER, WORKS_CACHE } from "./modules/helper.js"
 import projectsFilter from "./modules/projects-filter.js"
@@ -46,6 +47,11 @@ import projectsFilter from "./modules/projects-filter.js"
      * Implements projects list from modal
      */
     await implementThumbnailProjects()
+
+    /**
+     * implements categories list from select field to add photo modal
+     */
+    await implementCategoriesOptions()
     
     console.log("Implements thumbnails project in modal fully fulled !")
   } else {
