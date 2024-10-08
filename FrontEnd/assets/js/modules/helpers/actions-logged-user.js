@@ -3,6 +3,7 @@ import onUpdate from "./../actions/update.js"
 import onLogout from "./../actions/logout.js"
 import onShowPhotoModal from "../actions/show-photo-modal.js"
 import onBackModal from "../actions/back-modal.js"
+import onDropPhoto from "../actions/drop-photo.js"
 
 /**
  * this object save listeners to attach/removes for logged/unlogged user
@@ -29,12 +30,17 @@ const ACTIONS_LOGGED_USER = {
     return document.querySelector(".modal .actions .back-action button")
   },
 
+  get inputPhoto () {
+    return document.querySelector(".modal input#photo")
+  },
+
   removes() {
     this.authLink.removeEventListener("click", onLogout)
     this.btnUpdateProject.removeEventListener("click", onUpdate)
     this.modal.removeEventListener("click", onCloseModal)
     this.btnAddPhoto.removeEventListener("click", onShowPhotoModal)
     this.btnBack.removeEventListener("click", onBackModal)
+    this.inputPhoto.removeEventListener("change", onDropPhoto)
   },
   adds() {
     this.authLink.addEventListener("click", onLogout)
@@ -42,6 +48,7 @@ const ACTIONS_LOGGED_USER = {
     this.modal.addEventListener("click",  onCloseModal)
     this.btnAddPhoto.addEventListener("click", onShowPhotoModal)
     this.btnBack.addEventListener("click", onBackModal)
+    this.inputPhoto.addEventListener("change", onDropPhoto)
   }
 }
 

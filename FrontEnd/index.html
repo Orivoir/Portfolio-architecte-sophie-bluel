@@ -122,9 +122,14 @@
 				
 				<form method="POST" target="#">
 						<div class="drop-zone-photo">
-							<label for="photo">+ Ajouter photo</label>
+							<label for="photo">
+								<span>+ Ajouter photo</span>
+								<div class="photo-preview">
+									<img src="https://placehold.co/600x400" width="96" />
+								</div>
+								<p>jpg, png: 4mo max</p>
+							</label>
 							<input type="file" id="photo" class="hide" name="photo" accept="image/png, image/jpeg">
-							<p>jpg, png: 4mo max</p>
 						</div>
 
 						<div>
