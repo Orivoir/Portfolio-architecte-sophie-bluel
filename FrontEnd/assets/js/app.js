@@ -4,7 +4,7 @@ import implementContextLogin from "./modules/implement/implement-context-login.j
 import implementThumbnailProjects from "./modules/implement/implement-thumbnail-project.js"
 import implementCategoriesOptions from "./modules/implement/implement-categories-options.js"
 
-import { USER, WORKS_CACHE } from "./modules/helper.js"
+import { USER } from "./modules/helper.js"
 import projectsFilter from "./modules/projects-filter.js"
 
 
@@ -17,13 +17,6 @@ import projectsFilter from "./modules/projects-filter.js"
    */
   implementContextLogin()
 
-  /**
-   * Verify if sessionStorage that contains projects localy is sync with server
-   * Define works cache @see ./helper.js
-   */
-  await WORKS_CACHE.verify()
-  console.log("works cache verify !")
-  
   /**
    * create skeleton for each project that fetched from API endpoint (GET /api/works) and append in the document
    * Define fetch api @see ./modules/api.js

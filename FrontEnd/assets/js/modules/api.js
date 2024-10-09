@@ -1,4 +1,4 @@
-import { ENDPOINT, WORKS_KEYNAME, USER, WORKS_CACHE } from "./helper.js"
+import { ENDPOINT, USER } from "./helper.js"
 
 /**
  * this object execute fetch request and provide server data.
@@ -13,18 +13,9 @@ const API = {
    */
   async works() {
 
-    const worksFromCache = WORKS_CACHE.works
-
-    if(worksFromCache) {
-      console.log("get works from session storage !")
-      return worksFromCache
-    }
-
     const target = ENDPOINT.works
 
     const works = await this.fetch(target)
-
-    sessionStorage.setItem(WORKS_KEYNAME, JSON.stringify(works))
 
     return works
   },

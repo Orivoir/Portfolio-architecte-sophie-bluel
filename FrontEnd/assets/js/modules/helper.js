@@ -1,8 +1,7 @@
 import {
   ACTIONS_LOGGED_USER,
   ENDPOINT,
-  USER,WORKS_CACHE,
-  WORKS_KEYNAME
+  USER
 } from "./helpers/index.js"
 
 const ATTRIBUTE_CATEGORY_ID = "data-category-id"
@@ -26,10 +25,8 @@ const verifyDisabledBtnUpload = () => {
 export {
   ATTRIBUTE_CATEGORY_ID,
   ATTRIBUTE_PROJECT_ID,
-  WORKS_KEYNAME,
   ACTIONS_LOGGED_USER,
   ENDPOINT,
   USER,
-  WORKS_CACHE,
   verifyDisabledBtnUpload
 }

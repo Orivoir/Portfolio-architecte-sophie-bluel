@@ -1,5 +1,5 @@
 import { API } from "../api.js"
-import {ATTRIBUTE_PROJECT_ID, WORKS_CACHE} from "../helper.js"
+import {ATTRIBUTE_PROJECT_ID} from "../helper.js"
 import implementThumbnailProject from "./../implement/implement-thumbnail-project.js"
 import implementProject from "./../implement/implement-projects.js"
 
@@ -14,15 +14,6 @@ export default function onRemoveProject() {
     if(status === 200) {
 
       console.log("database has been upgrade")
-
-      /**
-       * Remove success upgrade UI and upgrade sessionStorage for work
-       */
-
-      // upgrade sessionStorage
-      WORKS_CACHE.remove(id)
-
-      console.log("local storage has been upgrade")
 
       console.log("> start upgrade UI with new data")
       implementProject().then(() => {
