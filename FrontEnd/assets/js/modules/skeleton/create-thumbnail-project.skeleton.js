@@ -35,15 +35,18 @@ export default function createProjectSkeleton({
 
   const containerRemove = document.createElement("div")
   const btnRemove = document.createElement("button")
+  const iconRemove = document.createElement("span")
 
-  // @TODO create icon remove here
+  iconRemove.classList.add("material-symbols-outlined")
+  iconRemove.textContent = "delete"
+
+  btnRemove.appendChild(iconRemove)
 
   image.src = imageUrl
   image.alt = `Image of project ${title}`
   image.width = 96
   
   containerRemove.classList.add("container-remove")
-  btnRemove.textContent = "rm"
   btnRemove.setAttribute(ATTRIBUTE_PROJECT_ID, id)
 
   btnRemove.addEventListener("click", onRemoveProject)
