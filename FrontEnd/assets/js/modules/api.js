@@ -98,6 +98,40 @@ const API = {
   },
 
   /**
+   * 
+   * @param {file: File; title: string; categoryId: number;} options 
+   * @returns {id: number; title: string; imageUrl: string; categoryId: string; userId: number} created object
+   */
+  async upload({file, title, categoryId}) {
+
+
+    if(!USER.isConnected) {
+      return {message: "connected user is required for this action", status: 401}
+    }
+
+    const target = ENDPOINT.upload
+    const token = USER.token
+  
+    const formData = new FormData()
+
+    formData.append("image", file)
+    formData.append("title", title)
+    formData.append("category", categoryId)
+
+    const response = await fetch(target, {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+
+    const data = await response.json()
+
+    return data
+  },
+
+  /**
    * generic fetch GET method with target and extract JSON from response
    * @param {string} target 
    * @returns Promise<JSON>

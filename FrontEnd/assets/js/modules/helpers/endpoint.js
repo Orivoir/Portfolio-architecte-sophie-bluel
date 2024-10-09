@@ -55,6 +55,17 @@ const ENDPOINT = {
     return baseUrl.toString()
   },
 
+  get upload() {
+
+    const endpoint = "/works"
+
+    const baseUrl = new URL(this.baseUrl)
+
+    baseUrl.pathname += endpoint
+
+    return baseUrl.toString()
+  },
+
   removeWork(id) {
 
     const endpoint = `/works/${id}`

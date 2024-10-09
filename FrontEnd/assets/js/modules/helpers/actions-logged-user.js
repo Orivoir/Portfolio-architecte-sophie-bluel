@@ -5,6 +5,7 @@ import onShowPhotoModal from "../actions/show-photo-modal.js"
 import onBackModal from "../actions/back-modal.js"
 import onDropPhoto from "../actions/drop-photo.js"
 import onBlurTitlePhoto from "../actions/blur-title-photo.js"
+import onUploadPhoto from "../actions/upload-photo.js"
 
 /**
  * this object save listeners to attach/removes for logged/unlogged user
@@ -38,6 +39,9 @@ const ACTIONS_LOGGED_USER = {
   get titlePhoto() {
     return document.querySelector(".modal input#title")
   },
+  get formUpload() {
+    return document.querySelector(".modal form#form-upload-photo")
+  },
 
   removes() {
     this.authLink.removeEventListener("click", onLogout)
@@ -47,6 +51,7 @@ const ACTIONS_LOGGED_USER = {
     this.btnBack.removeEventListener("click", onBackModal)
     this.inputPhoto.removeEventListener("change", onDropPhoto)
     this.titlePhoto.removeEventListener("blur", onBlurTitlePhoto)
+    this.formUpload.removeEventListener("submit", onUploadPhoto)
   },
   adds() {
     this.authLink.addEventListener("click", onLogout)
@@ -56,6 +61,7 @@ const ACTIONS_LOGGED_USER = {
     this.btnBack.addEventListener("click", onBackModal)
     this.inputPhoto.addEventListener("change", onDropPhoto)
     this.titlePhoto.addEventListener("blur", onBlurTitlePhoto)
+    this.formUpload.addEventListener("submit", onUploadPhoto)
   }
 }
 
