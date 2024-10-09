@@ -1,3 +1,5 @@
+import { verifyDisabledBtnUpload } from "../helper.js"
+
 export const MAX_SIZE_MB_UPLOAD_PHOTO = 4
 
 function onLoadPhotoUpload() {
@@ -17,7 +19,6 @@ export default function onDropPhoto() {
     return;
   }
 
-
   if(!/^image\/(png|jpe?g)$/i.test(photo.type.trim())) {
     console.warn("File is not a photo/image")
     return;
@@ -32,4 +33,5 @@ export default function onDropPhoto() {
   freader.readAsDataURL(photo)
 
   // verify disabled button submit
+  verifyDisabledBtnUpload()
 }
