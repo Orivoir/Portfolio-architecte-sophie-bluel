@@ -169,14 +169,6 @@ button[type="submit"], input[type="submit"]{
 	opacity: 0!important;
 }
 
-.title-projects {
-	display: flex;
-	gap: 0 10px;
-	justify-content: center;
-	margin-bottom: 30px;
-}
-
-
 .btn-outline {
 
 	font-family: "Syne";

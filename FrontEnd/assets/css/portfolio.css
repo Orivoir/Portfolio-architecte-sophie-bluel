@@ -1,4 +1,20 @@
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+}
+
+.title-projects {
+	display: flex;
+	gap: 0 20px;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 90px;
+}
+
+.title-projects button {
+	border: none;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	gap: 0 5px;
+	font-family: var(--family-txt);
 }
