@@ -10,7 +10,7 @@ export default async function implementFilters() {
 
 
   const staticFilterSkeleton = createFilterSkeleton("Tous")
-  staticFilterSkeleton.querySelector("button")?.classList.add("active")
+  staticFilterSkeleton.querySelector("button")?.classList.add("btn-fill")
   containerFilters.appendChild(staticFilterSkeleton)
  
   categories.forEach(category => {

@@ -14,6 +14,17 @@ export default function projectsFilter() {
   filtersBtn.forEach(filterBtn => {
     filterBtn.addEventListener("click", function () {
 
+      const currentActive = [...filtersBtn].find(filterBtn => (
+        filterBtn.classList.contains("btn-fill")
+      ))
+
+      if(currentActive === this) {
+        // user have click on the current filter, no action
+        return;
+      }
+
+      currentActive?.classList.remove("btn-fill")
+      this.classList.add("btn-fill")
       
       const categoryId = this.parentNode.getAttribute(ATTRIBUTE_CATEGORY_ID)
       console.log(`Show projects for category: ${categoryId || "All projects"}`)

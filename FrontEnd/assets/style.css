@@ -28,6 +28,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+html, body {
+	background-color: #FFFEF8;
+}
+
 body {
 	line-height: 1;
 }
@@ -47,7 +52,7 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
-body {
+#main-container {
 	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
@@ -88,14 +93,20 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
+	gap: 0 45px;
 }
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
 
-li:hover {
+a:hover {
 	color: #B1663C;
 }
 #introduction {
@@ -204,6 +215,8 @@ button {
 .title-projects {
 	display: flex;
 	gap: 0 10px;
+	justify-content: center;
+	margin-bottom: 30px;
 }
 
 
@@ -250,4 +263,56 @@ button {
 	position: absolute;
 	right: 10px;
 	top: 10px;
+}
+
+.btn-outline {
+
+	font-family: "Syne";
+	background-color: transparent;
+	color: #1D6154;
+	border: 1px solid #1D6154;
+	padding: 6px 12px;
+	outline: none;
+	border-radius: 20px; 
+}
+
+.btn-fill, .btn-outline:hover {
+
+	background-color: #1D6154;
+	color: #fff;
+}
+
+.filters-gallery {
+	margin-bottom: 45px;
+}
+
+.filters-gallery ul {
+	display: flex;
+	justify-content: center;
+	gap: 0 10px;
+}
+
+#introduction {
+	margin-bottom: 120px;
+}
+
+footer {
+	background-color: #fff;
+	padding: 45px 0;
+	font-family: "Work Sans";
+}
+
+footer nav ul {
+	margin: 0;
+	font-weight: 0;
+}
+
+header {
+	width: 85%;
+	margin: auto;
+	margin-top: 40px;
+}
+
+header a {
+	font-family: "Work Sans";
 }

@@ -17,6 +17,7 @@ export default function createFilterSkeleton(categoryName) {
   const button = document.createElement("button")
 
   button.type = "button"
+  button.classList.add("btn-outline")
 
   button.textContent = categoryName
 

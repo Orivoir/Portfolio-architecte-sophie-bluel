@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./assets/style.css">
   <script type="module" src="./assets/js/login.js" defer></script>
   <title>Login</title>
 </head>
 <body>
+
   <header>
     <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
     <nav>
@@ -19,31 +25,35 @@
       </ul>
     </nav>
   </header>
-  <main>
 
-    <h2>Log In</h2>
-    
-    <form action="" method="POST">
+  <div id="main-container">
+    <main>
+  
+      <h2>Log In</h2>
+      
+      <form action="" method="POST">
+  
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email">
+        </div>
+  
+        <div>
+          <label for="password">Mot de passe</label>
+          <input type="password" name="password" id="password">
+        </div>
+  
+        <button type="submit">Se connecter</button>
+  
+      </form>
+  
+      <a href="#">Mot de passe oublié</a>
+  
+      <p class="error"></p>
+      
+    </main>
+  </div>
 
-      <div>
-        <label for="email">E-mail</label>
-        <input type="email" name="email" id="email">
-      </div>
-
-      <div>
-        <label for="password">Mot de passe</label>
-        <input type="password" name="password" id="password">
-      </div>
-
-      <button type="submit">Se connecter</button>
-
-    </form>
-
-    <a href="#">Mot de passe oublié</a>
-
-    <p class="error"></p>
-    
-  </main>
   <footer>
     <nav>
       <ul>
