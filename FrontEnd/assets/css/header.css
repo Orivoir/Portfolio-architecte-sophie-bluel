@@ -5,5 +5,5 @@ header {
 }
 
 header a {
-	font-family: "Work Sans";
+	font-family: var(--family-txt);
 }
