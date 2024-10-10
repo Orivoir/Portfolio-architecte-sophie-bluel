@@ -133,21 +133,21 @@
 					<form method="POST" target="#" id="form-upload-photo">
 							<div class="drop-zone-photo">
 								<label for="photo">
-									<span>+ Ajouter photo</span>
 									<div class="photo-preview">
 										<img src="./assets/icons/placeholder-photo.svg" width="76" height="76" />
 									</div>
-									<p>jpg, png: 4mo max</p>
+									<span class="add-photo-txt">+ Ajouter photo</span>
+									<p class="format-photo-txt">jpg, png: 4mo max</p>
 								</label>
 								<input type="file" id="photo" class="hide" name="photo" accept="image/png, image/jpeg">
 							</div>
 	
-							<div>
+							<div class="meta-photo-field-container">
 								<label for="title">Titre</label>
 								<input type="text" id="title" name="title">
 							</div>
 	
-							<div>
+							<div class="meta-photo-field-container">
 								<label for="category">Catégorie</label>
 								<select name="category" id="category">
 									<!-- Dynamic insert options with Javascript -->
@@ -155,8 +155,10 @@
 							</div>
 	
 							<hr>
-	
-							<button type="submit" class="btn-upload" disabled>Valider</button>
+							
+							<div class="container-btn-upload">
+								<button type="submit" class="btn-upload" disabled>Valider</button>
+							</div>
 						</form>
 				</div>
 			</div>

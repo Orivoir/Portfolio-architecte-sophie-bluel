@@ -6,6 +6,12 @@ function onLoadPhotoUpload() {
   this.removeEventListener("load", onLoadPhotoUpload)
 
   document.querySelector(".photo-preview img").src = this.result
+
+  document.querySelector(".photo-preview").classList.add("custom")
+  document.querySelector(".modal .drop-zone-photo").classList.add("custom")
+
+  document.querySelector(".add-photo-txt").classList.add("hide")
+  document.querySelector(".format-photo-txt").classList.add("hide")
 }
 
 export default function onDropPhoto() {

@@ -45,18 +45,17 @@
 	cursor: pointer;
 }
 
-.modal .container-add-photo {
+.modal .container-add-photo, .modal .container-btn-upload {
 	display: flex;
 	justify-content: center;
 }
-
 
 .modal hr {
 	margin: 40px 0;
 	border-top: 1px solid #B3B3B3;
 }
 
-.modal .container-add-photo button {
+.modal .container-add-photo button, .modal .btn-upload {
 	font-family: var(--family-title);
 	font-weight: 700;
 	color: white;
@@ -67,6 +66,7 @@
 	outline: none;
 	border: none;
 	padding: 10px 35px;
+	margin: 0;
 }
 
 .modal .container-removale-gallery {
@@ -99,6 +99,68 @@
 	padding: 1px 2px;
 }
 
+.modal .container-remove button[disabled="true"] {
+
+	color: red;
+}
+
+.modal .meta-photo-field-container {
+	font-family: var(--family-txt);
+}
+
+.modal .meta-photo-field-container input, .modal .meta-photo-field-container select {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	display: block;
+	width: 100%;
+	margin: 15px 0;
+	background-color: transparent;
+}
+
 .modal .container-remove button span {
 	font-size: 18px;
+}
+
+.modal .drop-zone-photo {
+
+	background-color: #E8F1F6;
+	border-radius: 5px;
+	margin-bottom: 30px;
+	padding: 15px 0;
+	font-family: var(--family-txt);
+}
+
+.modal .drop-zone-photo label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px 0;
+}
+
+.modal .drop-zone-photo .add-photo-txt {
+	
+	color: #306685;
+	background-color: #CBD6DC;
+	padding: 5px 15px;
+	border-radius: 60px;
+	width: 180px;
+	text-align: center;
+}
+
+.modal .drop-zone-photo .format-photo-txt {
+	font-size: 11px;
+}
+
+.modal .photo-preview.custom img {
+
+	height: 170px;
+	width: auto;
+	object-fit: contain;
+} 
+
+
+.modal .drop-zone-photo.custom {
+	padding: 0;
 }
