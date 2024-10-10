@@ -11,19 +11,62 @@
 	justify-content: center;
 }
 
+.modal h3 {
+	font-family: var(--family-txt);
+	font-size: 1.5rem;
+	margin-bottom: 45px;
+	text-align: center;
+}
+
 .modal .content-modal {
 
 	background-color: #fff;
 	width: 25%;
-	min-width: 320px;
-	padding: 45px 90px;
+	width: 630px;
 	border-radius: 20px;
 }
 
-.modal .content-modal .actions {
+.modal .main-content-modal {
+	padding: 0px 80px;
+	padding-bottom: 30px;
+}
 
+.modal .content-modal .actions {
+	padding-top: 30px;
 	display: flex;
 	justify-content: space-between;
+	margin: 0 20px;
+}
+
+.modal .content-modal .actions button {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.modal .container-add-photo {
+	display: flex;
+	justify-content: center;
+}
+
+
+.modal hr {
+	margin: 40px 0;
+	border-top: 1px solid #B3B3B3;
+}
+
+.modal .container-add-photo button {
+	font-family: var(--family-title);
+	font-weight: 700;
+	color: white;
+	width: 250px;
+	background-color: var(--secondary);
+	text-align: center;
+	border-radius: 60px;
+	outline: none;
+	border: none;
+	padding: 10px 35px;
 }
 
 .modal .container-removale-gallery {
@@ -39,6 +82,23 @@
 
 .modal .container-remove {
 	position: absolute;
-	right: 10px;
-	top: 10px;
+	right: 5px;
+	top: 5px;
+}
+
+.modal .container-remove button {
+
+	background-color: #000;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	padding: 1px 2px;
+}
+
+.modal .container-remove button span {
+	font-size: 18px;
 }

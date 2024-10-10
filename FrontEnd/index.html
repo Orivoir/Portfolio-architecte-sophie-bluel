@@ -109,54 +109,56 @@
 				</div>
 			</div>
 
-			<div class="gallery-content">
-				<h2>Galerie photo</h2>
-
-				<div class="removable-gallery">
-					<ul class="container-removale-gallery">
-						<!-- Dynamic insert element with Javascript -->
-					</ul>
+			<div class="main-content-modal">
+				<div class="gallery-content">
+					<h3>Galerie photo</h3>
+	
+					<div class="removable-gallery">
+						<ul class="container-removale-gallery">
+							<!-- Dynamic insert element with Javascript -->
+						</ul>
+					</div>
+	
+					<hr>
+	
+					<div class="container-add-photo">
+						<button>Ajouter une photo</button>
+					</div>
 				</div>
-
-				<hr>
-
-				<div class="container-add-photo">
-					<button>Ajouter une photo</button>
+	
+				<div class="add-photo-content hide">
+					<h3>Ajout photo</h3>
+	
+					
+					<form method="POST" target="#" id="form-upload-photo">
+							<div class="drop-zone-photo">
+								<label for="photo">
+									<span>+ Ajouter photo</span>
+									<div class="photo-preview">
+										<img src="https://placehold.co/600x400" width="96" />
+									</div>
+									<p>jpg, png: 4mo max</p>
+								</label>
+								<input type="file" id="photo" class="hide" name="photo" accept="image/png, image/jpeg">
+							</div>
+	
+							<div>
+								<label for="title">Titre</label>
+								<input type="text" id="title" name="title">
+							</div>
+	
+							<div>
+								<label for="category">Catégorie</label>
+								<select name="category" id="category">
+									<!-- Dynamic insert options with Javascript -->
+								</select>
+							</div>
+	
+							<hr>
+	
+							<button type="submit" class="btn-upload" disabled>Valider</button>
+						</form>
 				</div>
-			</div>
-
-			<div class="add-photo-content hide">
-				<h2>Ajout photo</h2>
-
-				
-				<form method="POST" target="#" id="form-upload-photo">
-						<div class="drop-zone-photo">
-							<label for="photo">
-								<span>+ Ajouter photo</span>
-								<div class="photo-preview">
-									<img src="https://placehold.co/600x400" width="96" />
-								</div>
-								<p>jpg, png: 4mo max</p>
-							</label>
-							<input type="file" id="photo" class="hide" name="photo" accept="image/png, image/jpeg">
-						</div>
-
-						<div>
-							<label for="title">Titre</label>
-							<input type="text" id="title" name="title">
-						</div>
-
-						<div>
-							<label for="category">Catégorie</label>
-							<select name="category" id="category">
-								<!-- Dynamic insert options with Javascript -->
-							</select>
-						</div>
-
-						<hr>
-
-						<button type="submit" class="btn-upload" disabled>Valider</button>
-					</form>
 			</div>
 		</div>
 	</div>
