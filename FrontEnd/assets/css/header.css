@@ -1,0 +1,9 @@
+header {
+	width: 85%;
+	margin: auto;
+	margin-top: 40px;
+}
+
+header a {
+	font-family: "Work Sans";
+}

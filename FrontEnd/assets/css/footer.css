@@ -1,0 +1,12 @@
+footer {
+	background-color: #fff;
+	padding: 45px 0;
+	font-family: "Work Sans";
+}
+
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em;
+	font-weight: 0;
+}
