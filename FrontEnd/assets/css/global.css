@@ -48,7 +48,9 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
-
+* {
+	box-sizing: border-box;
+}
 :root {
 
 	--main-bg-color: #FFFEF8;

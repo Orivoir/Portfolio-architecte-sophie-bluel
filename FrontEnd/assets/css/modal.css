@@ -99,11 +99,6 @@
 	padding: 1px 2px;
 }
 
-.modal .container-remove button[disabled="true"] {
-
-	color: red;
-}
-
 .modal .meta-photo-field-container {
 	font-family: var(--family-txt);
 }
@@ -177,4 +172,9 @@
 
 .modal .drop-zone-photo.custom {
 	padding: 0;
+}
+
+.modal .container-btn-upload button:disabled {
+	cursor: default;
+	background-color: #A7A7A7;
 }
