@@ -1,4 +1,8 @@
 import { API } from "../api.js"
+import {ACTIONS_LOGGED_USER} from "./../helper.js"
+import uploadPhotoPreview from "../context/upload-photo-preview.js"
+import implementProjects from "../implement/implement-projects.js"
+import implementThumbnailProjects from "../implement/implement-thumbnail-project.js"
 
 export default function onUploadPhoto(event) {
   
@@ -24,6 +28,21 @@ export default function onUploadPhoto(event) {
     if(data.id) {
 
       console.log("work created: ", data)
+      
+      formUpload.reset()
+
+      uploadPhotoPreview()
+
+      ACTIONS_LOGGED_USER.autoCloseModal()
+
+      implementProjects()
+      .then(() => {
+        console.log("UI Project upgraded")
+      })
+      implementThumbnailProjects()
+      .then(() => {
+        console.log("UI thumnails projects upgraded")
+      })
 
     } else {
 

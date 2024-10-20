@@ -1,17 +1,11 @@
 import { verifyDisabledBtnUpload } from "../helper.js"
+import uploadPhotoPreview from "./../context/upload-photo-preview.js"
 
 export const MAX_SIZE_MB_UPLOAD_PHOTO = 4
 
 function onLoadPhotoUpload() {
   this.removeEventListener("load", onLoadPhotoUpload)
-
-  document.querySelector(".photo-preview img").src = this.result
-
-  document.querySelector(".photo-preview").classList.add("custom")
-  document.querySelector(".modal .drop-zone-photo").classList.add("custom")
-
-  document.querySelector(".add-photo-txt").classList.add("hide")
-  document.querySelector(".format-photo-txt").classList.add("hide")
+  uploadPhotoPreview(this.result)
 }
 
 export default function onDropPhoto() {

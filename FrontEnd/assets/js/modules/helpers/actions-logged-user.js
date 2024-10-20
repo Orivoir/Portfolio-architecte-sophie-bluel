@@ -62,6 +62,12 @@ const ACTIONS_LOGGED_USER = {
     this.inputPhoto.addEventListener("change", onDropPhoto)
     this.titlePhoto.addEventListener("blur", onBlurTitlePhoto)
     this.formUpload.addEventListener("submit", onUploadPhoto)
+  },
+
+  autoCloseModal() {
+
+    this.btnBack.click()
+    this.modal.click()
   }
 }
 

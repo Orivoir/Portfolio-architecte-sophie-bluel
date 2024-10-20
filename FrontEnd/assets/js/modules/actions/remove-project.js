@@ -1,5 +1,5 @@
 import { API } from "../api.js"
-import {ATTRIBUTE_PROJECT_ID} from "../helper.js"
+import {ATTRIBUTE_PROJECT_ID, ACTIONS_LOGGED_USER} from "../helper.js"
 import implementThumbnailProject from "./../implement/implement-thumbnail-project.js"
 import implementProject from "./../implement/implement-projects.js"
 
@@ -21,6 +21,7 @@ export default function onRemoveProject() {
       })
       implementThumbnailProject().then(() => {
         console.log("UI Modal has been upgrade")
+        
       })
 
     }
