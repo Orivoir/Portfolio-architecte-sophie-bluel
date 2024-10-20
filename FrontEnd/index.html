@@ -138,13 +138,15 @@
 
 
 					<form method="POST" target="#" id="form-upload-photo">
-						<div class="drop-zone-photo">
+						<div dropzone="move" aria-dropeffect="move" class="drop-zone-photo">
 							<label for="photo">
 								<div class="photo-preview">
 									<img src="./assets/icons/placeholder-photo.svg" data-placeholder-uri="./assets/icons/placeholder-photo.svg" width="76" height="76" />
 								</div>
 								<span class="add-photo-txt">+ Ajouter photo</span>
-								<p class="format-photo-txt">jpg, png: 4mo max</p>
+								<p class="format-photo-txt">
+									jpg, png: 4mo max
+								</p>
 							</label>
 							<input type="file" id="photo" class="hide" name="photo" accept="image/png, image/jpeg">
 						</div>

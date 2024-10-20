@@ -5,6 +5,7 @@ export default function uploadPhotoPreview(urlCustomPhoto) {
   const modalDropZone = document.querySelector(".modal .drop-zone-photo")
   const addPhotoTxt = document.querySelector(".add-photo-txt")
   const formatPhotoTxt = document.querySelector(".format-photo-txt")
+  const dropZone = document.querySelector(".drop-zone-photo")
 
   if(typeof urlCustomPhoto === "string" && !!urlCustomPhoto.trim().length) {
 
@@ -26,5 +27,7 @@ export default function uploadPhotoPreview(urlCustomPhoto) {
     
     addPhotoTxt.classList.remove("hide")
     formatPhotoTxt.classList.remove("hide")
+
+    dropZone.classList.remove("error")
   }
 }

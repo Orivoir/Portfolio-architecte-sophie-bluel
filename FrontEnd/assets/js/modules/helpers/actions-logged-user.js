@@ -43,6 +43,11 @@ const ACTIONS_LOGGED_USER = {
     return document.querySelector(".modal form#form-upload-photo")
   },
 
+  get dropZone() {
+
+    return document.querySelector(".modal .drop-zone-photo")
+  },
+
   removes() {
     this.authLink.removeEventListener("click", onLogout)
     this.btnUpdateProject.removeEventListener("click", onUpdate)
@@ -52,6 +57,7 @@ const ACTIONS_LOGGED_USER = {
     this.inputPhoto.removeEventListener("change", onDropPhoto)
     this.titlePhoto.removeEventListener("blur", onBlurTitlePhoto)
     this.formUpload.removeEventListener("submit", onUploadPhoto)
+    this.dropZone.removeEventListener("drop", onDropPhoto)
   },
   adds() {
     this.authLink.addEventListener("click", onLogout)
@@ -62,6 +68,15 @@ const ACTIONS_LOGGED_USER = {
     this.inputPhoto.addEventListener("change", onDropPhoto)
     this.titlePhoto.addEventListener("blur", onBlurTitlePhoto)
     this.formUpload.addEventListener("submit", onUploadPhoto)
+    this.dropZone.addEventListener("drop", onDropPhoto)
+    this.dropZone.addEventListener("dragenter", (ev) => {
+      ev.stopPropagation()
+      ev.preventDefault()
+    })
+    this.dropZone.addEventListener("dragover", (ev) => {
+      ev.stopPropagation()
+      ev.preventDefault()
+    })
   },
 
   autoCloseModal() {
