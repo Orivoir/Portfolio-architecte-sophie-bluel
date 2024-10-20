@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Sophie Bluel - Architecte d'intérieur</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	
-	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
 	<link rel="stylesheet" href="./assets/index.css">
 	<script src="./assets/js/app.js" type="module" defer></script>
 </head>
+
 <body>
 
 	<header>
@@ -37,7 +40,7 @@
 	</header>
 
 	<div id="main-container">
-	
+
 		<main>
 			<section id="introduction">
 				<figure>
@@ -45,17 +48,21 @@
 				</figure>
 				<article>
 					<h2>Designer d'espace</h2>
-					<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
-					<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-					<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
+					<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale
+						du chantier.</p>
+					<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs
+						dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré
+						dans le souci du détail, le respect du planning et du budget.</p>
+					<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)
+					</p>
 				</article>
 			</section>
-			
+
 			<section id="portfolio">
-	
+
 				<div class="title-projects">
 					<h2>Mes Projets</h2>
-	
+
 					<div class="update-project-content hide">
 						<button>
 							<span class="material-symbols-outlined">edit_square</span>
@@ -63,12 +70,12 @@
 						</button>
 					</div>
 				</div>
-	
+
 				<div class="filters-gallery"></div>
-				
+
 				<div class="gallery"></div>
 			</section>
-	
+
 			<section id="contact">
 				<h2>Contact</h2>
 				<p>Vous avez un projet ? Discutons-en !</p>
@@ -112,57 +119,58 @@
 			<div class="main-content-modal">
 				<div class="gallery-content">
 					<h3>Galerie photo</h3>
-	
+
 					<div class="removable-gallery">
 						<ul class="container-removale-gallery">
 							<!-- Dynamic insert element with Javascript -->
 						</ul>
 					</div>
-	
+
 					<hr>
-	
+
 					<div class="container-add-photo">
 						<button>Ajouter une photo</button>
 					</div>
 				</div>
-	
+
 				<div class="add-photo-content hide">
 					<h3>Ajout photo</h3>
-	
-					
+
+
 					<form method="POST" target="#" id="form-upload-photo">
-							<div class="drop-zone-photo">
-								<label for="photo">
-									<div class="photo-preview">
-										<img src="./assets/icons/placeholder-photo.svg" width="76" height="76" />
-									</div>
-									<span class="add-photo-txt">+ Ajouter photo</span>
-									<p class="format-photo-txt">jpg, png: 4mo max</p>
-								</label>
-								<input type="file" id="photo" class="hide" name="photo" accept="image/png, image/jpeg">
-							</div>
-	
-							<div class="meta-photo-field-container">
-								<label for="title">Titre</label>
-								<input type="text" id="title" name="title" autocomplete="off" spellcheck="false" autocorrect="off">
-							</div>
-	
-							<div class="meta-photo-field-container">
-								<label for="category">Catégorie</label>
-								<select name="category" id="category">
-									<!-- Dynamic insert options with Javascript -->
-								</select>
-							</div>
-	
-							<hr>
-							
-							<div class="container-btn-upload">
-								<button type="submit" class="btn-upload" disabled>Valider</button>
-							</div>
-						</form>
+						<div class="drop-zone-photo">
+							<label for="photo">
+								<div class="photo-preview">
+									<img src="./assets/icons/placeholder-photo.svg" width="76" height="76" />
+								</div>
+								<span class="add-photo-txt">+ Ajouter photo</span>
+								<p class="format-photo-txt">jpg, png: 4mo max</p>
+							</label>
+							<input type="file" id="photo" class="hide" name="photo" accept="image/png, image/jpeg">
+						</div>
+
+						<div class="meta-photo-field-container">
+							<label for="title">Titre</label>
+							<input type="text" id="title" name="title" autocomplete="off" spellcheck="false" autocorrect="off">
+						</div>
+
+						<div class="meta-photo-field-container">
+							<label for="category">Catégorie</label>
+							<select name="category" id="category">
+								<!-- Dynamic insert options with Javascript -->
+							</select>
+						</div>
+
+						<hr>
+
+						<div class="container-btn-upload">
+							<button type="submit" class="btn-upload" disabled>Valider</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
+
 </html>
