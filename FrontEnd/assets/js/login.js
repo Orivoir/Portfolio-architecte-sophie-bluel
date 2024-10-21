@@ -1,4 +1,15 @@
 import { API } from "./modules/api.js"
+import { USER } from "./modules/helper.js"
+
+// redirect user if already connected
+if(USER.isConnected) {
+
+  const indexUrl = new URL(document.location.href)
+  
+  indexUrl.pathname = ""
+
+  document.location.href = indexUrl.href
+}
 
 
 const formLogin = document.querySelector("form")
