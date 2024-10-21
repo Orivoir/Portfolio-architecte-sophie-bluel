@@ -14,6 +14,8 @@ export default function onDropPhoto(event) {
   event.stopPropagation()
   event.preventDefault()
 
+  document.querySelector(".drop-zone-photo").classList.remove("dragover")
+
   // data can provide from input file or from drag and drop:
   const photo =
     // try get data from drag and drop

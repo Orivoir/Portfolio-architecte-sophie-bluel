@@ -133,7 +133,7 @@
 }
 
 .modal .drop-zone-photo {
-
+	transition: 300ms opacity ease-in;
 	background-color: #E8F1F6;
 	border-radius: 5px;
 	margin-bottom: 30px;
@@ -177,4 +177,19 @@
 .modal .container-btn-upload button:disabled {
 	cursor: default;
 	background-color: #A7A7A7;
+}
+
+
+.modal .drop-zone-photo.dragover {
+
+	opacity: .65;
+}
+
+
+.modal .drop-zone-photo img {
+	transition: 300ms transform ease-in;
+}
+
+.modal .drop-zone-photo.dragover img {
+	transform: rotateZ(10deg) scale(.85);
 }

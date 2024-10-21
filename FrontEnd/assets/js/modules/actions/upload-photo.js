@@ -25,7 +25,7 @@ export default function onUploadPhoto(event) {
 
     // Upgrade UI with response
 
-    if(data.id) {
+    if(typeof data.id == "number") {
 
       console.log("work created: ", data)
       

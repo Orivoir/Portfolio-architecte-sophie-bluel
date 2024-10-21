@@ -6,6 +6,9 @@ import onBackModal from "../actions/back-modal.js"
 import onDropPhoto from "../actions/drop-photo.js"
 import onBlurTitlePhoto from "../actions/blur-title-photo.js"
 import onUploadPhoto from "../actions/upload-photo.js"
+import onDragEnter from "../actions/drag-enter.js"
+import onDragLeave from "../actions/drag-leave.js"
+import onDragOver from "../actions/drag-over.js"
 
 /**
  * this object save listeners to attach/removes for logged/unlogged user
@@ -39,6 +42,7 @@ const ACTIONS_LOGGED_USER = {
   get titlePhoto() {
     return document.querySelector(".modal input#title")
   },
+  
   get formUpload() {
     return document.querySelector(".modal form#form-upload-photo")
   },
@@ -57,7 +61,12 @@ const ACTIONS_LOGGED_USER = {
     this.inputPhoto.removeEventListener("change", onDropPhoto)
     this.titlePhoto.removeEventListener("blur", onBlurTitlePhoto)
     this.formUpload.removeEventListener("submit", onUploadPhoto)
+
+    // Drag and Drop events
     this.dropZone.removeEventListener("drop", onDropPhoto)
+    this.dropZone.removeEventListener("dragenter", onDragEnter)
+    this.dropZone.removeEventListener("dragleave", onDragLeave)
+    this.dropZone.removeEventListener("dragover", onDragOver)
   },
   adds() {
     this.authLink.addEventListener("click", onLogout)
@@ -68,15 +77,12 @@ const ACTIONS_LOGGED_USER = {
     this.inputPhoto.addEventListener("change", onDropPhoto)
     this.titlePhoto.addEventListener("blur", onBlurTitlePhoto)
     this.formUpload.addEventListener("submit", onUploadPhoto)
+    
+    // Drag and drop event
     this.dropZone.addEventListener("drop", onDropPhoto)
-    this.dropZone.addEventListener("dragenter", (ev) => {
-      ev.stopPropagation()
-      ev.preventDefault()
-    })
-    this.dropZone.addEventListener("dragover", (ev) => {
-      ev.stopPropagation()
-      ev.preventDefault()
-    })
+    this.dropZone.addEventListener("dragenter", onDragEnter)
+    this.dropZone.addEventListener("dragleave", onDragLeave)
+    this.dropZone.addEventListener("dragover", onDragOver)
   },
 
   autoCloseModal() {
