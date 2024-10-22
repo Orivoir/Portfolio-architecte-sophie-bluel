@@ -20,7 +20,7 @@ import projectsFilter from "./modules/projects-filter.js"
   /**
    * create skeleton for each project that fetched from API endpoint (GET /api/works) and append in the document
    * Define fetch api @see ./modules/api.js
-   * Define skeleton project @see ./create-project-skeleton.js 
+   * Define skeleton project @see ./skeleton/create-project-skeleton.js 
    */
   await implementProjects()
   console.log("Implement projects fully fulled !")

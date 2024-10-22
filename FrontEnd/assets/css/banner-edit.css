@@ -1,0 +1,19 @@
+section.banner-edit {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: var(--family-txt);
+  padding: 15px 0;
+  font-size: 16px;
+}
+
+section.banner-edit div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+section.banner-edit div span {
+  font-size: 16px;
+}
