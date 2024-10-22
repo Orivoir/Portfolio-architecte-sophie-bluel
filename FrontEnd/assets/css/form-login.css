@@ -1,3 +1,7 @@
+html, body {
+	height: 100%;
+}
+
 input {
 	height: 50px;
   display: inline-block;
@@ -48,4 +52,13 @@ a.forgot-password {
 h2 {
   text-align: center;
   margin-bottom: 40px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+body #main-container {
+	flex: 1;
 }
