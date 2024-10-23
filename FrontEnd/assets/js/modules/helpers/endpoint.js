@@ -17,7 +17,7 @@ const ENDPOINT = {
 
     url.hostname = this.HOSTNAME
     url.port = this.PORT
-    url.protocol = this.protocol
+    url.protocol = this.PROTOCOL
     url.pathname = this.PREFIX
 
     return url.toString()

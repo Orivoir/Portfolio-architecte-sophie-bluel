@@ -24,7 +24,7 @@ export default function onDropPhoto(event) {
     // get data from input file
     this.file || this.files[0];
 
-  const sizeMb = parseFloat(((photo.size / 1_048_576)).toFixed(2))
+  const sizeMb = parseFloat(((photo?.size / 1_048_576)).toFixed(2))
   
   if(sizeMb > MAX_SIZE_MB_UPLOAD_PHOTO) {
     console.warn("file to large: ", sizeMb)

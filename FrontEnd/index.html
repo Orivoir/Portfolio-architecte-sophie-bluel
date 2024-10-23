@@ -19,6 +19,7 @@
 
 <body>
 
+	<!-- Banner edit (logged only) -->
 	<section class="banner-edit hide">
 		<div>
 			<span class="material-symbols-outlined">edit_square</span>
@@ -26,8 +27,17 @@
 		</div>
 	</section>
 
+	<!-- Top level header -->
 	<header>
-		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+		<!-- Main title -->
+		<a href="index.html">
+			<h1>
+				Sophie Bluel
+				<span>Architecte d'intérieur</span>
+			</h1>
+		</a>
+		
+		<!-- Nav bar -->
 		<nav>
 			<ul>
 				<li>
@@ -41,18 +51,26 @@
 						login
 					</a>
 				</li>
-				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+				<li>
+					<a href="#">
+						<img src="./assets/icons/instagram.png" alt="Instagram">
+					</a>
+				</li>
 			</ul>
 		</nav>
 	</header>
 
 	<div id="main-container">
-
 		<main>
+			<!-- Designer d'espace section -->
 			<section id="introduction">
+
+				<!-- Media image -->
 				<figure>
 					<img src="./assets/images/sophie-bluel.png" alt="">
 				</figure>
+
+				<!-- Texte article -->
 				<article>
 					<h2>Designer d'espace</h2>
 					<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale
@@ -65,11 +83,13 @@
 				</article>
 			</section>
 
+			<!-- Projects list -->
 			<section id="portfolio">
 
 				<div class="title-projects">
 					<h2>Mes Projets</h2>
 
+					<!-- action update (logged only) -->
 					<div class="update-project-content hide">
 						<button>
 							<span class="material-symbols-outlined">edit_square</span>
@@ -78,9 +98,35 @@
 					</div>
 				</div>
 
-				<div class="filters-gallery"></div>
+				<!-- buttons list filters projects (unlogged only) -->
+				<div class="filters-gallery">
+					<!--
+						list button filters
+						dynamic insert with Javascript
+						skeleton implemented should be:
+						<ul>
+							<li data-category-id={id}>
+								<button type="button">
+									{categoryName}
+								</button>
+							</li>
+							...
+						</ul>
+					-->
+				</div>
 
-				<div class="gallery"></div>
+				<div class="gallery">
+					<!--
+						projects list dynamic insert with
+						Javascript, skeleton should be:
+						<figure data-category-id={id}>
+							<img
+								src={url}
+								alt="image of project {name}">
+							<figcation>{name}</figcation>
+						</figure>
+					-->
+				</div>
 			</section>
 
 			<section id="contact">
@@ -102,13 +148,20 @@
 	<footer>
 		<nav>
 			<ul>
-				<li>Mentions Légales</li>
+				<li>
+					<a href="#">
+						Mentions Légales
+					</a>
+				</li>
 			</ul>
 		</nav>
 	</footer>
 
+	<!-- Modal edit/upload (logged only) -->
 	<div class="modal hide">
 		<div class="content-modal">
+
+			<!-- top level action (back and close) -->
 			<div class="actions">
 				<div class="back-action hide-alt">
 					<button>
@@ -124,6 +177,8 @@
 			</div>
 
 			<div class="main-content-modal">
+
+				<!-- Gallery screen (default) -->
 				<div class="gallery-content">
 					<h3>Galerie photo</h3>
 
@@ -136,20 +191,34 @@
 					<hr>
 
 					<div class="container-add-photo">
+						<!-- click button switch to next screen -->
 						<button>Ajouter une photo</button>
 					</div>
 				</div>
 
+				<!-- Upload screen -->
 				<div class="add-photo-content hide">
 					<h3>Ajout photo</h3>
 
-
+					<!-- form upload -->
 					<form method="POST" target="#" id="form-upload-photo">
+
+						<!--
+							container upload photo
+							with native Drag and Drop API system
+						-->
 						<div dropzone="move" aria-dropeffect="move" class="drop-zone-photo">
 							<label for="photo">
+
+								<!-- container photo preview with default photo -->
 								<div class="photo-preview">
-									<img src="./assets/icons/placeholder-photo.svg" data-placeholder-uri="./assets/icons/placeholder-photo.svg" width="76" height="76" />
+									<img
+										src="./assets/icons/placeholder-photo.svg"
+										data-placeholder-uri="./assets/icons/placeholder-photo.svg"
+										alt="photo preview for upload"
+										width="76" height="76" />
 								</div>
+
 								<span class="add-photo-txt">+ Ajouter photo</span>
 								<p class="format-photo-txt">
 									jpg, png: 4mo max
@@ -158,11 +227,19 @@
 							<input type="file" id="photo" class="hide" name="photo" accept="image/png, image/jpeg">
 						</div>
 
+						<!-- Title field -->
 						<div class="meta-photo-field-container">
 							<label for="title">Titre</label>
-							<input type="text" id="title" name="title" autocomplete="off" spellcheck="false" autocorrect="off">
+							<input 
+								type="text"
+								id="title"
+								name="title"
+								autocomplete="off"
+								spellcheck="false"
+								autocorrect="off">
 						</div>
 
+						<!-- category option -->
 						<div class="meta-photo-field-container">
 							<label for="category">Catégorie</label>
 							<select name="category" id="category">
