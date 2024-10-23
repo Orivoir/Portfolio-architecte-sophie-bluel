@@ -17,7 +17,7 @@ const verifyDisabledBtnUpload = () => {
 
   if(isEmptyPhoto || isEmptyTitle) {
     btnUpload.setAttribute("disabled", true)
-  } else {
+  } else if(!isEmptyPhoto && !isEmptyTitle) {
     btnUpload.removeAttribute("disabled")
   }
 }

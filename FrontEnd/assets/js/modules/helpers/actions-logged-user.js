@@ -59,7 +59,7 @@ const ACTIONS_LOGGED_USER = {
     this.btnAddPhoto.removeEventListener("click", onShowPhotoModal)
     this.btnBack.removeEventListener("click", onBackModal)
     this.inputPhoto.removeEventListener("change", onDropPhoto)
-    this.titlePhoto.removeEventListener("blur", onBlurTitlePhoto)
+    this.titlePhoto.removeEventListener("input", onBlurTitlePhoto)
     this.formUpload.removeEventListener("submit", onUploadPhoto)
 
     // Drag and Drop events
@@ -75,7 +75,7 @@ const ACTIONS_LOGGED_USER = {
     this.btnAddPhoto.addEventListener("click", onShowPhotoModal)
     this.btnBack.addEventListener("click", onBackModal)
     this.inputPhoto.addEventListener("change", onDropPhoto)
-    this.titlePhoto.addEventListener("blur", onBlurTitlePhoto)
+    this.titlePhoto.addEventListener("input", onBlurTitlePhoto)
     this.formUpload.addEventListener("submit", onUploadPhoto)
     
     // Drag and drop event
